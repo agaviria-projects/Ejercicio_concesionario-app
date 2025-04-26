@@ -1,9 +1,8 @@
 package com.miconcesionario.concesionario_app.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 public class Customer {
@@ -15,6 +14,11 @@ public class Customer {
     private String email;
     private String password;
 
+    //Relacion inversa: un cliente puede tener muchas ventas
+    @OneToMany(mappedBy = "customer")
+    private List<Sale> sales;
+
+    //Constructor vacio
     public Customer() {
 
     }

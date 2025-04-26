@@ -1,9 +1,7 @@
 package com.miconcesionario.concesionario_app.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
 import java.time.LocalDate;
 
 @Entity
@@ -15,6 +13,16 @@ public class Sale {
     private LocalDate datesale;
     private Double coste;
 
+    //Relaciones
+    @ManyToOne
+    @JoinColumn(name ="customer_id")
+    private Customer customer;
+
+    @ManyToOne
+    @JoinColumn(name="car_id")
+    private Car car;
+
+    //Constructor vacio-+
     public Sale(){
 
     }

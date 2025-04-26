@@ -1,9 +1,8 @@
 package com.miconcesionario.concesionario_app.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 public class Car {
@@ -15,6 +14,11 @@ public class Car {
     private String brand;
     private String model;
 
+    //Relacion inversa: un carro puede tener muchas ventas
+    @OneToMany(mappedBy = "car")
+    private List<Sale>sales;
+
+    //constructor vacio
     public Car(){
 
     }
