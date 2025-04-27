@@ -53,6 +53,22 @@ public class Sale {
     public void setCoste(Double coste) {
         this.coste = coste;
     }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public Car getCar() {
+        return car;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    public void setCar(Car car) {
+        this.car = car;
+    }
 }
 
 
